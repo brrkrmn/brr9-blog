@@ -15,7 +15,7 @@ export default function Page({ post }) {
           <p>{post.readTime}</p>
         </div>
 
-        <h1 className="mt-6 mb-6 inline-block font-heading font-bold text-[44px] leading-tight">
+        <h1 className="mt-6 mb-6 inline-block font-heading font-bold text-[44px] leading-tight max-sm:text-3xl">
           {post.title}
         </h1>
 

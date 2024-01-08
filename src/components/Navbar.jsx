@@ -6,7 +6,7 @@ import { Button } from "src/components/ui/button"
 export function Navbar () {
   return (
     <header>
-      <nav className="text-base font-normal flex items-center justify-between px-32 py-6 container">
+      <nav className="text-base font-normal flex items-center justify-between lg:px-32 py-6 container">
         <div className="flex ">
           <Icons.sprout className="stroke-green stroke-2"/>
           <p className="text-base font-medium">Brr</p>
