@@ -11,10 +11,10 @@ export default function About () {
         <AvatarImage
           src="/images/profile.jpg"
           alt="Berra Karaman"
-          className="relative flex h-40 w-40 lg:h-48 lg:w-48 shrink-0 overflow-hidden rounded-full object-cover" />
+          className="relative flex h-44 w-44 shrink-0 overflow-hidden rounded-full object-cover" />
       </Avatar>
       <div>
-        <h1 className="font-heading  enlargeOnHover text-4xl tracking-tight lg:text-5xl">Berra Karaman</h1>
+        <h1 className="font-heading  enlargeOnHover text-4xl tracking-tight lg:text-[44px]">Berra Karaman</h1>
         <p className="mt-1 font-medium text-green" >Frontend developer</p>
       </div>
       <Separator className="w-60 lg:w-80" />

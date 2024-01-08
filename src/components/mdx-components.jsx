@@ -25,7 +25,7 @@ const components = {
   h3: ({ className, ...props }) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 text-3xl font-semibold tracking-normal",
+        "mt-8 scroll-m-20 text-[26px] font-semibold tracking-normal",
         className
       )}
       {...props}
@@ -66,7 +66,7 @@ const components = {
   ),
   p: ({ className, ...props }) => (
     <p
-      className={cn("text-lg font-normal tracking-wide leading-8 [&:not(:first-child)]:mt-6", className)}
+      className={cn("text-base font-normal tracking-wide leading-8 [&:not(:first-child)]:mt-6", className)}
       {...props}
     />
   ),

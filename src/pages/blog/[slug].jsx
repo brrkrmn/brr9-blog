@@ -6,16 +6,16 @@ import { Mdx } from "../../components/mdx-components";
 
 export default function Page({ post }) {
   return (
-    <article className="container relative max-w-4xl py-6 lg:py-10">
+    <article className="container relative max-w-[820px] py-6">
       <div>
-        <div className="text-md flex justify-between block text-muted-foreground">
+        <div className="text-sm flex justify-between block text-muted-foreground">
           <time>
             Published on {post.date}
           </time>
           <p>{post.readTime}</p>
         </div>
 
-        <h1 className="mt-6 mb-6 inline-block font-heading font-bold text-4xl leading-tight lg:text-5xl">
+        <h1 className="mt-6 mb-6 inline-block font-heading font-bold text-[44px] leading-tight">
           {post.title}
         </h1>
 
@@ -23,7 +23,7 @@ export default function Page({ post }) {
 
         <div className="flex justify-center py-6 lg:py-10">
           <Button variant="ghost">
-            <Link href="/" className="flex items-center text-base">
+            <Link href="/" className="flex items-center text-sm">
               <Icons.chevronLeft className="mr-2 h-4 w-4" />
               See all posts
             </Link>
