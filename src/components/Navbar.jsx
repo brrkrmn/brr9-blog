@@ -7,10 +7,10 @@ export function Navbar () {
   return (
     <header>
       <nav className="text-base font-normal flex items-center justify-between lg:px-32 py-6 container">
-        <div className="flex ">
+        <Button variant="logo">
           <Icons.sprout className="stroke-green stroke-2"/>
-          <p className="text-base font-medium">Brr</p>
-        </div>
+          <Link href="/" className="text-base font-medium">Brr</Link>
+        </Button>
         <div className="flex gap-1 transition-colorshover:text-foreground/80">
           <Button variant="link">
             <Link href="/" className="text-sm">Blog</Link>
