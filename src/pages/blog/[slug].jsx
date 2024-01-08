@@ -1,21 +1,10 @@
 import { allDocs } from ".contentlayer/generated";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
 import { Icons } from "src/components/icons";
 import { Button } from "src/components/ui/button";
 import { Mdx } from "../../components/mdx-components";
 
-export function getDocFromParams () {
-  const pathname = usePathname()
-
-  const doc = allDocs.find((doc) => doc.slug === pathname)
-
-  // if (!doc) notFound()
-  return doc
-}
-
-export default function Page () {
-  const post = getDocFromParams()
+export default function Page({ post }) {
   return (
     <article className="container relative max-w-4xl py-6 lg:py-10">
       <div>
@@ -40,8 +29,25 @@ export default function Page () {
             </Link>
           </Button>
         </div>
-
       </div>
     </article>
-  )
+  );
+}
+
+export async function getServerSideProps (context) {
+  const { params } = context;
+  const slug = params.slug;
+  const post = allDocs.find((doc) => doc.slugAsParams === slug);
+
+  if (!post) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      post,
+    },
+  };
 }
