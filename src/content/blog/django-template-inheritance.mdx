@@ -1,0 +1,99 @@
+---
+title: Django Template Inheritance
+description: Create dynamic email templates with {% extends %} and {% block %}
+date: January 11, 2024
+readTime: 4 min read
+---
+
+Django template language offers many features to create dynamic templates efficiently. In this blog, I will briefly show you how you can use template inheritance in Django to create dynamic templates.
+
+---
+
+Let’s assume that we send 3 types of emails that have:
+
+- similar header section with a dynamic value
+- dynamic content body
+- the same footer
+
+<Image
+  src="/images/template-inheritance/template-1.png"
+  width="756"
+  height="404"
+  alt="template schema"
+/>
+
+Considering that the 3 emails have a lot in common, creating 3 separate HTML templates would not be efficient, since we would have to repeat the same things over and over again. We could, instead, create a base template that has all the common sections, and place the changing content dynamically.
+
+<Image
+  src="/images/template-inheritance/template-2.png"
+  width="756"
+  height="700"
+  alt="dynamic template schema"
+/>
+
+To do that, let’s create a base_template.html and add the header and footer sections. To place the content dynamically, we need to create blocks that are going to be defined by child templates. You can leave `{% block %}` tags empty to be defined by the child template, or give it a default value that is to be used if the child template does not define a value for that block.
+
+
+```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>My Dynamic Template</title>
+    </head>
+
+    <body>
+        <h1>Dear {{ username }} </h1>
+
+        <div>
+          {% block content %}
+            No content available.
+          {% endblock %}
+        </div>
+
+        <p>Footer never changes!</p>
+    </body>
+  </html>
+```
+
+Now that we have a base template, the only job of child templates is to define the content section. Since we have 3 different email cases, let’s create 3 separate html files in the templates folder with the appropriate names. First thing that we need to do in child templates is to inform Django that we want this template to inherit from a base template. We can do that with `{% extends %}` tag. In order for template inheritance to work, you need to use `{% extends %}` as the first tag in your template.
+
+````html
+  {% extends base_template.html %}
+````
+
+What this tag does is incorporating the base template in your child template, you can think of it as placing your child template in your base template.
+
+<Image
+  src="/images/template-inheritance/template-3.png"
+  width="756"
+  height="700"
+  alt="extends template schema"
+/>
+
+Remember the block tags that we used in our base template? We can overwrite them the same way in the child templates. Let’s add the section to overwrite the content block.
+
+````html
+  {% extends base_template.html %}
+
+  {% block content %}
+    <p>This text is added from child template</p>
+  {% endblock %}
+````
+
+Now this child template inherits the base template and the content we defined here is incorporated to that template.
+
+You can decide which blocks to overwrite in the child template. If one of the blocks in parent template is not overridden, the fallback values will be used.
+
+---
+
+In a nutshell, you can use template inheritance with:
+
+- `{% extends %}` tag → to inherit a parent template
+- `{% block %}` tag → to overwrite sections the sections of parent template in child template
+
+---
+
+To learn more:
+
+- [Django template language](https://docs.djangoproject.com/en/5.0/ref/templates/language/#template-inheritance)

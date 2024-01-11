@@ -16,7 +16,7 @@ const components = {
   h2: ({ className, ...props }) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+        "mt-10 scroll-m-20 border-b pb-1 text-3xl font-light tracking-tight first:mt-0",
         className
       )}
       {...props}
@@ -25,7 +25,7 @@ const components = {
   h3: ({ className, ...props }) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 text-[26px] font-semibold tracking-normal max-sm:text-xl",
+        "mt-8 scroll-m-20 text-[26px] font-normal tracking-normal max-sm:text-xl",
         className
       )}
       {...props}
@@ -138,13 +138,20 @@ const components = {
   code: ({ className, ...props }) => (
     <code
       className={cn(
-        "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm",
+        "relative rounded border border-[#24292e] px-[0.3rem] py-[0.2rem] font-mono text-sm text-nowrap shadow-md",
         className
       )}
       {...props}
     />
   ),
-  Image,
+  Image: ({ className, ...props }) => (
+    <Image
+      className={cn(
+        "w-full, h-auto rounded-lg shadow-md my-8"
+      )}
+      {...props}
+    />
+  ),
 }
 
 
