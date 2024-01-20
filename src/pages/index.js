@@ -3,6 +3,7 @@ import { PostCard } from "src/components/PostCard";
 import { Separator } from "src/components/ui/separator";
 
 export default function Home () {
+  const posts = (allDocs.sort((a, b) => (b.number - a.number)))
   return (
     <div className="container max-w-[820px] py-6">
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
@@ -13,7 +14,7 @@ export default function Home () {
       </div>
       <Separator className="my-8" />
       <div className="flex flex-col gap-4">
-        {allDocs.map((post) =>
+        {posts.map((post) =>
           <PostCard key={post._id} post={post} />
           )}
       </div>
