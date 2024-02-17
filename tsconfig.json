@@ -22,7 +22,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/pages/blog/[slug].jsx",
     "src/components/mdx-components.jsx"
 ],
   "exclude": [
