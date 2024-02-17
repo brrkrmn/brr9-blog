@@ -4,11 +4,6 @@ import { Navbar } from "src/components/Navbar"
 import { ThemeProvider } from 'src/components/theme-provider'
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: "Berra Karaman",
-  description: "A self-taught developer's blog."
-}
-
 export default function Layout ({ children }) {
   return (
     <div className={inter.className}>
