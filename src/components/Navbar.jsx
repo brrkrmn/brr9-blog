@@ -13,6 +13,9 @@ export function Navbar () {
         </Button>
         <div className="flex gap-1 transition-colorshover:text-foreground/80">
           <Button variant="link">
+            <Link href="/projects" className="text-sm">Projects</Link>
+          </Button>
+          <Button variant="link">
             <Link href="/" className="text-sm">Blog</Link>
           </Button>
           <Button variant="link">
