@@ -1,0 +1,25 @@
+---
+number: 5
+title: Why is `var` not deprecated?
+description: Explaining backwards compatibility and the use of var in today's JavaScript
+date: December 9, 2024
+readTime: 1 min read
+---
+
+If you skimmed through any book or resource that talks about JavaScript, one of the first topics to be presented is variables. Almost every book I have encountered introduces variables in the same way: by mentioning the three ways to declare a variable: `let`, `const`, and `var`. You have probably heard a dozen times that `var` was used in the past but is no longer recommended due to some problems it introduced. Almost all of those resources also state that you should avoid using `var` unless it is really necessary. If the use of `var` is discouraged this much, why is it still not deprecated?
+
+The broad answer to this is because there are tons of old JS programs that use `var`, and deprecating it would break all those programs unless developers rewrote them.
+
+Rewriting hundreds of programs to convert `var` into `let` or `const` is an option. But imagine if you had to do this for every change—the struggle would go on forever as programming languages keep introducing changes. I don’t think JavaScript would be so popular if this was the situation.
+
+Luckily, we don’t have to do any of this because JavaScript is **backwards compatible**!
+
+### Backwards Compatibility
+
+Backwards compatibility basically means that once a feature is accepted as valid JS, no future improvement can invalidate that feature.
+
+Ensuring backwards compatibility guarantees that old JS code can still run today, even after the drastic changes to the language that have occurred since. Considering this concept, old JS code containing `var` should run in today’s engines without breaking. This is why it is still possible to run a program that uses the keyword, especially if you work with an old codebase.
+
+---
+
+To answer the question, it is safe to say that, in order to not violate the backwards compatibility principle and to prevent breaking old programs, `var` is not deprecated and can still be encountered in the wild.
