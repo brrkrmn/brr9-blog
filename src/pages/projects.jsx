@@ -4,6 +4,12 @@ import Link from "next/link";
 export default function About () {
   const projects = [
     {
+      title: "Codymate",
+      description: "Make your code presentations stand out! Codymate is a code presentation tool that lets you create interactive code scenes with step-by-step typing animations, transforming your code into engaging slides. Perfect for live demos, tutorials, and tech talks.",
+      link: "https://www.codymate.com/",
+      logo: "/images/projects/codymate.png"
+    },
+    {
       title: "Code&Line",
       description: "Code&Line is a note-taking app designed for developers to provide a more detailed understanding of their code. Its core feature allows users to target specific code lines with each note, aiming for a line-by-line explanation of the snippet.",
       link: "https://www.codeandline.com/",
